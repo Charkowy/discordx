@@ -9,13 +9,25 @@ Canales de Texto y Voz: Los usuarios pueden comunicarse en diferentes canales y 
 Gestión de Archivos: Permite el envío y la recepción de archivos adjuntos e imágenes. 
 Interfaz Amigable: Diseñada con Tailwind CSS para una experiencia de usuario atractiva y responsiva. Tecnologías Utilizadas 
 Frontend: 
+
+
 Next.js 
+
+
 React 
+
+
 Tailwind 
+
+
 CSS
+
 Backend:
+
 Socket.io 
+
 Prisma MySQL 
+
 Instalación 
 
 Clona el repositorio:
