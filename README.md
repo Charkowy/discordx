@@ -13,7 +13,6 @@ Frontend:
 
 Next.js 
 
-
 React 
 
 
