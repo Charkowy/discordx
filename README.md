@@ -12,7 +12,6 @@ Frontend:
 
 
 Next.js 
-
 React 
 
 
