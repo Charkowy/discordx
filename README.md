@@ -1,4 +1,5 @@
-Clon de Discord Fullstack Descripción del Proyecto: Este proyecto es un clon de Discord desarrollado con tecnologías modernas como Next.js, React, Socket.io, Prisma, Tailwind CSS y MySQL. El objetivo es crear una plataforma de comunicación en tiempo real que permita a los usuarios crear servidores, enviar mensajes, compartir archivos y comunicarse a través de canales de texto y voz.
+#Clon de Discord Fullstack
+Descripción del Proyecto: Este proyecto es un clon de Discord desarrollado con tecnologías modernas como Next.js, React, Socket.io, Prisma, Tailwind CSS y MySQL. El objetivo es crear una plataforma de comunicación en tiempo real que permita a los usuarios crear servidores, enviar mensajes, compartir archivos y comunicarse a través de canales de texto y voz.
 
 Características 
 Creación de Servidores: Los usuarios pueden crear y gestionar sus propios servidores. 
