@@ -20,7 +20,7 @@ Backend: Socket.io, Prisma y MySQL
 
 Instalación 
 
-Clona el repositorio: bash y Copiar git clone https://github.com/tu_usuario/clon-discord.git 
+Clona el repositorio: bash y Copiar git clone https://github.com/Charkowy/DiscordX.git
 
 Navega al directorio del proyecto: bash y Copiar cd clon-discord 
 
