@@ -1,5 +1,5 @@
 
-# Clon de Discord Fullstack
+# DISCORDX
 
 ## Descripción del Proyecto
 
