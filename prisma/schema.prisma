@@ -29,22 +29,18 @@ model Profile{
   updatedAt DateTime @updatedAt
 }
 
-model Server{
-  id String @id @default(uuid())
-  name String
-  imageUrl String @db.Text
-  inviteCode String @unique
-
-  profileId String
-  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
-
-  members Member[]
-  channels Channel[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([profileId])
+model Server {
+    id         String   @id @default(uuid())
+    name       String
+    imageUrl   String   @db.Text
+    inviteCode String   @unique
+    profileId  String
+    profile    Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+    members    Member[]
+    channels   Channel[]
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
+    @@index([profileId])
 }
 
 enum MemberRole{
