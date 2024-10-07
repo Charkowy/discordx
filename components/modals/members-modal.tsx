@@ -36,6 +36,26 @@ export const MembersModal = () => {
     const isModalOpen = isOpen && type === "members";
     const { server } = data as {server: ServerWithMembersWithProfiles};
 
+    const onKick = async (memberId: string ) =>{
+        try{
+            setLoadingId(memberId);
+            const url = qs.stringifyUrl({
+                url: `/api/members/${memberId}`,
+                query:{
+                    serverId: server?.id,
+                    
+                },
+            });
+            const response = await axios.delete(url);
+            router.refresh();
+            onOpen("members", {server: response.data});
+        }catch(error){
+
+        }finally{
+
+        }
+    }
+
     const onRoleChage = async (memberId: string, role: MemberRole) => {
         try{
             setLoadingId(memberId);
@@ -43,12 +63,11 @@ export const MembersModal = () => {
                 url: `/api/members/${memberId}`,
                 query: {
                     serverId: server?.id,
-                    memberId,
                 }
             });
 
             const response = await axios.patch(url, {role});
-            router.refresh();
+            router.refresh(); //esto no funciona aun
 
             onOpen("members", {server: response.data});
         }catch(error){
@@ -129,7 +148,9 @@ export const MembersModal = () => {
                                                 </DropdownMenuPortal>
                                             </DropdownMenuSub>
                                             <DropdownMenuSeparator>
-                                                <DropdownMenuItem>
+                                                <DropdownMenuItem
+                                                onClick ={() => onKick(member.id)}
+                                                >
                                                     <Gavel className="h-4 w-4 mr-2" />
                                                     Kick
                                                 </DropdownMenuItem>
