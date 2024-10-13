@@ -21,7 +21,7 @@ export async function DELETE(
         })
             return NextResponse.json(server);
     }catch(error){
-        console.log("[SERVER_ID_DEKETE]", error);
+        console.log("[SERVER_ID_DELETE]", error);
         return new NextResponse("internal Error", {status:500});
     }
 
