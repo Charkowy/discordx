@@ -27,3 +27,6 @@ Socket.io, Prisma y MySQL
 
    ```bash
    git clone https://github.com/Charkowy/DiscordX.git
+
+   --bash
+   npm install
