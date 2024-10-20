@@ -27,3 +27,18 @@ Socket.io, Prisma y MySQL
 
    ```bash
    git clone https://github.com/Charkowy/DiscordX.git
+
+2. Instala npm
+
+   ```bash
+   npm install
+
+3. Instala Clerk
+
+   ```bash
+   npm install @clerk/nextjs
+
+4. Instala prisma
+
+   ```bash
+   npm i -D prisma
