@@ -32,13 +32,3 @@ Socket.io, Prisma y MySQL
 
    ```bash
    npm install
-
-3. Instala Clerk
-
-   ```bash
-   npm install @clerk/nextjs
-
-4. Instala prisma
-
-   ```bash
-   npm i -D prisma
