@@ -1,11 +1,11 @@
 import { currentProfile } from "@/lib/current-profile";
 import { NextResponse } from "next/server";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid"
 import { db } from "@/lib/db";
 
 export async function PATCH(
     req: Request,
-    { params }: { params: { inviteCode: string } }
+    { params }: { params: { serverId: string } }
 ) {
     try {
         const profile = await currentProfile();
@@ -13,35 +13,23 @@ export async function PATCH(
             return new NextResponse("Unauthorized", { status: 401 });
         }
 
-        if (!params.inviteCode) {
-            return new NextResponse("Invite Code Missing", { status: 400 });
+        if (!params.serverId) {
+            return new NextResponse("Server ID Missing", { status: 400 });
         }
 
-        // Find the server by inviteCode to get the id
-        const serverToUpdate = await db.server.findUnique({
+        const server = await db.server.update({
             where: {
-                inviteCode: params.inviteCode, // Use inviteCode as a unique lookup
-            },
-        });
-
-        // Check if the server exists and belongs to the current profile
-        if (!serverToUpdate) {
-            return new NextResponse("Server not found", { status: 404 });
-        }
-
-        // Update the server's invite code using its ID
-        const updatedServer = await db.server.update({
-            where: {
-                id: serverToUpdate.id, // Use the ID from the found server
+                id: params.serverId,
+                profileId: profile.id,
             },
             data: {
-                inviteCode: uuidv4(), // Generate a new invite code
+                inviteCode: uuidv4(),
             },
-        });
+        })
 
-        return NextResponse.json(updatedServer);
+        return NextResponse.json(server);
     } catch (error) {
-        console.error("[SERVER-UPDATE ERROR]", error);
-        return new NextResponse("Internal Server Error", { status: 500 });
+        console.log("[SERVER-ID]", error);
+        return new NextResponse("Internal Error", { status: 500 });
     }
 }
