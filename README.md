@@ -21,6 +21,11 @@ Next.js, React, Tailwind y CSS
 
 Socket.io, Prisma y MySQL
 
+## Trello
+
+   ```bash
+   https://trello.com/b/JmN2oBhj/6-10-discord
+   ```
 ## Instalación
 
 1. Clona el repositorio:
@@ -28,7 +33,13 @@ Socket.io, Prisma y MySQL
    ```bash
    git clone https://github.com/Charkowy/DiscordX.git
 
-2. Instala npm
+2. Instalar npm
 
    ```bash
    npm install
+
+3. Correr prisma
+
+   ```bash
+   npm prisma init
+   npm prisma generate
