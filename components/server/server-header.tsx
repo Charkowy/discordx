@@ -52,7 +52,7 @@ export const ServerHeader = ({
                         Server Settings
                         <Settings className="h-4 w-4 ml-auto" />
                     </DropdownMenuItem>
-                )}
+                )}                               
                 {isAdmin && (
                     <DropdownMenuItem
                         onClick = {() => onOpen("members", {server })}

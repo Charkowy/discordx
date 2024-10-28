@@ -88,6 +88,7 @@ const DropdownMenuItem = React.forwardRef<
       className
     )}
     {...props}
+    onClick={() => setTimeout(() => props.onClick(), 200)}
   />
 ))
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName
