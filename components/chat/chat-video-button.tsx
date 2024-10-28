@@ -4,6 +4,7 @@ import qs from "query-string";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {Video, VideoOff} from "lucide-react";
 import { ActionTooltip } from "../ui/action-tootips";
+import { Icon } from "@radix-ui/react-select";
 
 
 export const ChatVideoButton = () => {
@@ -26,7 +27,7 @@ export const ChatVideoButton = () => {
     const icon = isVideo ? VideoOff : Video;
     const toolTipLabel = isVideo ? "End video call" : "Start video call"
     return (
-        <ActionTooltip side="bottom" label={tooltipLabel}>
+        <ActionTooltip side="bottom" label={toolTipLabel}>
                 <button onClick={onClick} className="hover:opacity-75 transition mr-4">
                     <Icon className="h-6 w-6 text-zinc-500 dark:text-zinc-400"/>
                 </button>
